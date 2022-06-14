@@ -11,23 +11,11 @@ public class Pizza extends AbstractEntity<Long> {
     @Column(nullable = false, unique = true)
     private String nome;
 
-    @Column(nullable = false, columnDefinition = "DECIMAL(7,2) DEFAULT 0.00")
-    private BigDecimal salario;
+    @Column(nullable = false)
+    private String preco;
 
-    @Column(name = "data_entrada", nullable = false, columnDefinition = "DATE")
-    private LocalDate dataEntrada;
-
-    @Column(name = "data_saida", columnDefinition = "DATE")
-    private LocalDate dataSaida;
-
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_id_fk")
-    private Endereco endereco;
-
-    @ManyToOne // um tipo pode ter varias pizzas
-    @JoinColumn(name = "tipo_id_fk")
-    private Tipo tipo;
+    @Column(nullable = false, unique = true)
+    private String tamanho;
 
     public String getNome() {
         return nome;
@@ -37,43 +25,19 @@ public class Pizza extends AbstractEntity<Long> {
         this.nome = nome;
     }
 
-    public BigDecimal getSalario() {
-        return salario;
+    public String getPreco() {
+        return preco;
     }
 
-    public void setSalario(BigDecimal salario) {
-        this.salario = salario;
+    public void setPreco(String preco) {
+        this.preco = preco;
     }
 
-    public LocalDate getDataEntrada() {
-        return dataEntrada;
+    public String getTamanho() {
+        return tamanho;
     }
 
-    public void setDataEntrada(LocalDate dataEntrada) {
-        this.dataEntrada = dataEntrada;
-    }
-
-    public LocalDate getDataSaida() {
-        return dataSaida;
-    }
-
-    public void setDataSaida(LocalDate dataSaida) {
-        this.dataSaida = dataSaida;
-    }
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
-    public Tipo getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(Tipo tipo) {
-        this.tipo = tipo;
+    public void setTamanho(String tamanho) {
+        this.tamanho = tamanho;
     }
 }

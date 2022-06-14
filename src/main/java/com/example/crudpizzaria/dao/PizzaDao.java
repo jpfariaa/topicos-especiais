@@ -1,7 +1,6 @@
 package com.example.crudpizzaria.dao;
 
 import com.example.crudpizzaria.domain.Pizza;
-import com.example.crudpizzaria.domain.Tipo;
 
 import java.util.List;
 
