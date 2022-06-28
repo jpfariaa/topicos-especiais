@@ -2,7 +2,9 @@ package com.example.crudpizzaria.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "PIZZAS")
@@ -22,6 +24,9 @@ public class Pizza extends AbstractEntity<Long> {
 
     @Column
     private String descricao;
+
+    @OneToMany(mappedBy = "pizzaPedido")
+    private List<Pedido> pedidos;
 
     public String getNome() {
         return nome;
@@ -61,5 +66,13 @@ public class Pizza extends AbstractEntity<Long> {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
     }
 }
