@@ -53,6 +53,32 @@
                         <option value="Gigante">Gigante</option>
                     </select>
                 </div>
+                <div class="form-group col-md-6">
+                    <label for="tempoMedio">Tempo médio de preparo</label>
+                    <input type="text" class="form-control" id="tempoMedio" data-mask="00:00"
+                           data-mask-reverse="true" th:field="*{tempoMedio}"/>
+                    <div class="invalid-feedback">
+
+                    </div>
+                </div>
+<!--                <div class="form-group col-md-6">-->
+<!--                    <label for="descricao">Descrição</label>-->
+<!--                    <input type="text" class="form-control" id="asd" placeholder="Descrição"-->
+<!--                           autofocus="autofocus" th:field="*{descricao}"/>-->
+<!--                    <div class="invalid-feedback">-->
+
+<!--                    </div>-->
+<!--                </div>-->
+
+                <div class="form-group col-md-6">
+                    <label for="descricao">Descrição da Pizza</label>
+                    <textarea type="text" class="form-control"
+                              id="descricao" autofocus="autofocus" th:field="*{descricao}"></textarea>
+                    <div class="invalid-feedback">
+
+                    </div>
+                </div>
+
             </div>
             <input type="hidden" id="id" th:field="*{id}"/>
             <button type="submit" class="btn btn-primary btn-sm">Salvar</button>

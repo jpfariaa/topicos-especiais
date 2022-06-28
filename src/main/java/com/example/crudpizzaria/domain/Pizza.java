@@ -1,21 +1,27 @@
 package com.example.crudpizzaria.domain;
 
-import javax.persistence.*;
-import java.math.BigDecimal;
-import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "PIZZAS")
 public class Pizza extends AbstractEntity<Long> {
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String nome;
 
     @Column(nullable = false)
     private String preco;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String tamanho;
+
+    @Column(nullable = false)
+    private String tempoMedio;
+
+    @Column
+    private String descricao;
 
     public String getNome() {
         return nome;
@@ -39,5 +45,21 @@ public class Pizza extends AbstractEntity<Long> {
 
     public void setTamanho(String tamanho) {
         this.tamanho = tamanho;
+    }
+
+    public String getTempoMedio() {
+        return tempoMedio;
+    }
+
+    public void setTempoMedio(String tempoMedio) {
+        this.tempoMedio = tempoMedio;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }
